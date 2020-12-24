@@ -4,8 +4,9 @@ const UserSchema = new mongoose.Schema(
 	{
 		username: { type: String, required: true, unique: true },
 		password: { type: String, required: true }
-	},
-	{ collection: 'users' }
+	}, {
+	collation: { locale: 'en_US', strength: 1 }
+}
 )
 
 const model = mongoose.model('UserSchema', UserSchema)
